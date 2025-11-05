@@ -85,3 +85,92 @@ print(f"User typed {my_input} \n This will be on a new line")
 
 # Truthy values
 # ... everything else
+
+
+# Casting
+# Type conversion 
+
+# Implicit conversion - happens automatically
+num1 = 1
+num2 = 3.3
+my_sum = num1 + num2
+
+#Explicit conversion - I have to tell the interpreter what I'm intending to do
+#In this case - case my_sum as a string 
+my_message = "My total is: " + str(my_sum)
+
+print(my_message)
+
+#Another example of explicit conversion - string -> int
+my_new_sum = int("124")
+
+#Collections
+
+#Python has a few built in collection types for storing multiple objects/values at once
+#Lists, Sets, Dictionaries, Range, etc
+
+#List - Mutable, Allows duplicates, indexable
+
+my_list = [11, 3, 400, 98]
+
+print(my_list[0])
+
+#Append - adds a new object to my list
+my_list.append("new thing for my list")
+
+print(my_list)
+
+my_list_extension = [4, 11, 3, 92]
+
+#Extend - adds a collection of objects to the end of my list
+my_list.extend(my_list_extension)
+
+print(my_list)
+
+my_list.insert(3, "new position 3")
+
+print(my_list)
+
+# Removes the first instance of the value passed to .remove()
+my_list.remove(3)
+
+print(my_list)
+
+# Pop - I can use this to quickly remove the last thing in the list
+my_list.pop()
+
+print(my_list)
+
+#If i give pop an index value, it can remove whatever is at that index
+my_list.pop(1)
+
+print(my_list)
+
+my_list.reverse()
+print(my_list)
+
+#my_list.sort()
+
+print(my_list)
+
+# Sets - Mutable, doesn't allow duplicates, indexable 
+my_set = {1, 2, 3}
+
+my_set.add(5)
+my_set.add(1)
+
+print(my_set)
+
+#Unlike in a list, pop is FIFO when working with sets
+print(my_set.pop())
+print(my_set)
+
+#I can use remove() and discard() to remove specific values from my set
+#notice we say remove values, not remove the value at an index
+
+#Remove will raise an error if the given value DOESN'T exist in the set
+my_set.remove(3)
+
+my_set.discard(342)
+
+print(my_set)
