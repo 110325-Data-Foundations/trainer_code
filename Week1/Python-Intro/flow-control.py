@@ -74,6 +74,6 @@ match choice:
         print("Selected option 2")
     case "3":
         print("Selected option 3")
-    case _: # Default case - if none above are matched
+    case default: # Default case - if none above are matched
         print("You failed to select 1-3 somehow")
 
