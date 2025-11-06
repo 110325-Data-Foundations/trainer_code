@@ -174,3 +174,37 @@ my_set.remove(3)
 my_set.discard(342)
 
 print(my_set)
+
+# Tuples 
+
+# Immutable collections that allow duplicates... are they indexable? - Yes they are
+
+this_is_my_tuple = ("these", "can't", "change")
+
+print(this_is_my_tuple.count("change")) # Number of times an object appears in the tuple
+
+print(this_is_my_tuple.index("these")) # Index of where this object is within the Tuple (if exists)
+
+
+# Dictionary 
+# Collections of key/value pairs. Just about any datatype can be used for both keys and values
+# They are mutable, you can have duplicate VALUES but keys must be unique. 
+# Semantics: maybe keys were always indexes? But recent python version support ordered dictionaries
+
+def key_function():
+    return "nice"
+
+my_dictionary = {
+    "key": "value",
+    100: 1000,
+    None: "this will still work",
+    key_function: "I wonder if this works?"
+}
+
+print(my_dictionary) # This works, you can have functions as keys.
+
+# Adding a new key value pair to the dictionary
+my_dictionary["new key"] = 23
+
+print(my_dictionary)
+
