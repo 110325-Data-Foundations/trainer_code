@@ -1,3 +1,13 @@
+# Python modules... a module is a just a .py file that has code in it. We can import that code for use in other files!
+# I want to work with JSON in this app - I need to import the json module
+
+# Importing the json module
+import json
+from asciimatics.renderers import Scale
+# import classes_objects # I can import my own modules (.py files) for use in other files as needed
+# I can get more specific as to what I want to import from a module
+from classes_objects import Dog # Only pulling in the class I need for this demo. P.s. put imports before your code.
+
 # File handling in python
 
 # We can interact with files directly from within our app.
@@ -38,3 +48,33 @@ with open("./resources/test-file.txt") as file:
     
 # Using the above auto-closes my file - you can use the with statement for any kind
 # of disposable connection or resource.
+
+# Working with JSON
+# JSON files end in .json - though really they are just strings 
+with open("./resources/json-test.json", "w") as jsonfile:
+    # By default, the built in JSON module can map certain data types/default objects
+    # Lists, Strings, Integers, Floats, Booleans, None.... and Dictionaries
+    
+    name_list = ["Jonathan", "Richard", "Jasdhir"] # Just a list to test our json.dumps
+    
+    json_names = json.dumps(name_list) # Converting that list to a json formatted string
+    
+    print(json_names) # printing it out to test
+    
+    print(jsonfile.__dict__)
+    
+    jsonfile.write(json_names)
+    
+    pancake = Dog("Malchi", 10, "white", "Pancake")
+    
+    # If we want to serialize anything beyond the aforementioned compatible types
+    # we need to turn them into a dictionary first
+    jsonfile.write(json.dumps(pancake.__dict__))
+    
+    
+# Reading json from an existing file
+
+with open("./resources/ellie.json", "r") as ellie_json:
+    ellie = json.load(ellie_json) # Load vs Loads - json.load() expects things to come from a file
+                                    # json.loads() can take any json string and de-serialize it 
+    print(ellie)
