@@ -34,7 +34,6 @@ except: # Always a good idea to end with a generic except block
 # If we need to, we can create custom exceptions based on business rules.
 # Not related to python or arithmetic rules.
 class MyException(Exception): # A custom exception is just a class that inherits from the Exception class
-    
     # Like any other class, we need to override __init__ to create this object
     def __init__(self, message="Time to lock in buddy. Number's too small"):
         self.message = message
