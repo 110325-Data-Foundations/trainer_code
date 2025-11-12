@@ -72,8 +72,3 @@ df.fillna(0)
 
 # We can get more granular and go column by column if we need to - just depends on the data set and your use case. 
 df.dropna() # Dropping rows that contain any missing values - can be valid, you will lose data in the data frame. 
-
-
-
-
-print(tesla_df.info())
