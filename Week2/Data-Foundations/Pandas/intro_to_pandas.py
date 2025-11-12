@@ -74,3 +74,6 @@ df.fillna(0)
 df.dropna() # Dropping rows that contain any missing values - can be valid, you will lose data in the data frame. 
 
 
+
+
+print(tesla_df.info())
