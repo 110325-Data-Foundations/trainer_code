@@ -1,5 +1,5 @@
 order_id,order_date,customer_id,product_category,product_name,quantity,unit_price,region,sales_person
-ORD0001,2024-04-12,CUST535,Electronics,Laptop,8,602.67,East,Diana
+ORD0001,2024-04-12,CUST535,Electronics,Laptop,8,,East,Diana
 ORD0002,2024-04-12,CUST221,Clothing,Jeans,3,108.98,North,Bob
 ORD0003,2024-03-28,CUST472,Books,Novel,4,151.44,North,Bob
 ORD0004,2024-05-10,CUST761,Clothing,Jeans,5,970.21,North,
