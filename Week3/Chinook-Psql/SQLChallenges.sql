@@ -5,7 +5,9 @@
 
 -- SETUP:
 -- Create a database server (docker)
--- $ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+-- $ docker run --name postgres -e POSTGRES_PASSWORD=testpass -p 5432:5432 -d postgres
+-- Create a new database called chinookdb
+-- $ docker exec -i postgres psql -U postgres -d chinookdb < "C:\Users\Path\To\Chinook\Psql\File.sql"
 -- Connect to the server (Azure Data Studio / Database extension)
 -- Test your connection with a simple query (like a select)
 -- Execute the Chinook database (from the Chinook_pg.sql file to create Chinook resources in your server)
