@@ -120,3 +120,7 @@ SELECT
     (SELECT AVG(unit_price) from track) as avg_price_in_catalog
 FROM track
 WHERE unit_price > 1.00;
+
+--test
+
+
