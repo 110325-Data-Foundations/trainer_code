@@ -575,6 +575,19 @@ UPDATE employee_contact_info SET phone = '555-1234' WHERE employee_id = 1;
 
 ## 15. Stored Procedures and Functions
 
+| Feature / Capability                     | Stored Procedure | Function |
+|-----------------------------------------|-----------------|---------|
+| Return value                             | Does not have to return a value. Procedures can return data through output parameters or result sets, but returning a single value is not required. | Must return a value. Functions are required to return a scalar, composite type, or a table. |
+| Multiple result sets                      | Can return multiple result sets. Useful for complex operations where several queries are executed. | Can return only a single value or a single table. Cannot return multiple independent result sets. |
+| Data modification (INSERT/UPDATE/DELETE)| Can modify database data. Procedures are commonly used to perform DML operations. | Cannot modify database data directly if used in SQL statements. Functions are expected to be side-effect free when used in queries. |
+| Transaction control (COMMIT/ROLLBACK)   | Can perform transaction control inside the procedure. | Cannot perform transaction control inside the function. Functions are executed within the transaction context of the caller. |
+| Use inside SQL statements                | Cannot be called directly in a SELECT, WHERE, or other SQL expressions. | Can be used directly inside SELECT, WHERE, or other SQL expressions. |
+| Input and output parameters             | Can accept both input and output parameters, allowing flexible data exchange. | Can accept input parameters, but only a single return value is allowed (no separate output parameters). |
+| Exception handling                        | Supports exception handling using BEGIN...EXCEPTION blocks. | Limited exception handling. Functions can raise exceptions but cannot handle them as flexibly as procedures. |
+| Calling other database objects           | Can call functions and other stored procedures. | Can call other functions, but cannot directly call stored procedures. |
+| Use cases                                | Best suited for complex business logic, performing multiple DML operations, and orchestrating multiple queries. | Best suited for reusable calculations, data transformations, and returning computed values or tables within queries. |
+
+
 ### Stored Procedure - Performing Complex Operations
 
 ```sql
@@ -664,50 +677,4 @@ SELECT get_employee_full_name(1) as employee_name;
 
 -- Table function in FROM clause (treat like a table)
 SELECT * FROM get_employees_by_department(3);
-```
-
-## 16. Advanced Example - Putting It All Together
-
-```sql
--- Complex query using CTEs, subqueries, joins, and aggregation
-WITH department_stats AS (
-    -- Common Table Expression (CTE): reusable named subquery
-    SELECT 
-        department_id,
-        AVG(salary) as avg_salary,
-        COUNT(*) as employee_count
-    FROM employees
-    GROUP BY department_id
-),
-high_earners AS (
-    -- Second CTE building on the first
-    SELECT 
-        e.employee_id,
-        e.first_name,
-        e.last_name,
-        e.salary,
-        d.department_name,
-        ds.avg_salary
-    FROM employees e
-    JOIN departments d ON e.department_id = d.department_id
-    JOIN department_stats ds ON e.department_id = ds.department_id
-    WHERE e.salary > ds.avg_salary * 1.2  -- Earn 20% more than department average
-)
--- Main query using the CTEs
-SELECT 
-    he.*,  -- All columns from high_earners CTE
-    
-    -- Correlated subquery to count projects for each high earner
-    (SELECT COUNT(*) FROM projects p WHERE p.manager_id = he.employee_id) as project_count
-    
-FROM high_earners he
-ORDER BY he.salary DESC;
-
--- This query demonstrates:
--- 1. CTEs for organizing complex logic
--- 2. Multiple JOIN operations
--- 3. Aggregate functions with GROUP BY
--- 4. Correlated subqueries
--- 5. Complex filtering conditions
--- 6. Sorting and column aliases
 ```
