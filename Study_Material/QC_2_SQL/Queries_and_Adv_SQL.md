@@ -1,4 +1,4 @@
-# PostgreSQL Comprehensive Study Guide
+# PostgreSQL Study Guide
 
 ## 1. Database Fundamentals
 
