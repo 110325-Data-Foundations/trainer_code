@@ -82,25 +82,6 @@ In a `Products` table, `ProductCode` (like "PROD-001") might be an alternate key
 **Example:**
 In an `Orders` table, `CustomerID` is a foreign key that references the `CustomerID` primary key in the `Customers` table.
 
-## Constraints
-
-**Definition:** Rules enforced on data columns to maintain data integrity.
-
-### Common Constraint Types
-
-1. **NOT NULL** - Ensures a column cannot have NULL value
-2. **UNIQUE** - Ensures all values in a column are different
-3. **PRIMARY KEY** - Combination of NOT NULL and UNIQUE
-4. **FOREIGN KEY** - Uniquely identifies a row in another table
-5. **CHECK** - Ensures all values in a column satisfy specific conditions
-6. **DEFAULT** - Sets a default value when no value is specified
-
-**Example Applications:**
-
-- `CHECK (Age >= 18)` - Ensures employees are adults
-- `DEFAULT GETDATE()` - Sets current date for record creation
-- `NOT NULL` on required fields like email addresses
-
 ## Multiplicity (Cardinality)
 
 **Definition:** Describes the numerical relationship between entities in a database.
