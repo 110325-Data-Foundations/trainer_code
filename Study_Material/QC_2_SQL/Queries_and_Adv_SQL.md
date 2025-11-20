@@ -587,7 +587,6 @@ UPDATE employee_contact_info SET phone = '555-1234' WHERE employee_id = 1;
 | Calling other database objects           | Can call functions and other stored procedures. | Can call other functions, but cannot directly call stored procedures. |
 | Use cases                                | Best suited for complex business logic, performing multiple DML operations, and orchestrating multiple queries. | Best suited for reusable calculations, data transformations, and returning computed values or tables within queries. |
 
-
 ### Stored Procedure - Performing Complex Operations
 
 ```sql
