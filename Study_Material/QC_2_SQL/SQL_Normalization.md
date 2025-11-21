@@ -98,8 +98,6 @@ In an `Orders` table, `CustomerID` is a foreign key that references the `Custome
 - One record in Table A relates to many records in Table B
 - **Example:** `Customers` and `Orders` - one customer can place many orders
 
-
-
 #### Many-to-Many (M:N)
 
 - Many records in Table A relate to many records in Table B
