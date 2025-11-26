@@ -4,7 +4,7 @@
 --- *****************
 
 -- SETUP:
--- Create a database server (docker)
+-- Create a database server (docker) (Port on your computer):(Port in the container)
 -- $ docker run --name postgres -e POSTGRES_PASSWORD=testpass -p 5432:5432 -d postgres
 -- Create a new database called chinookdb
 -- $ docker exec -i postgres psql -U postgres -d chinookdb < "C:\Users\Path\To\Chinook\Psql\File.sql"
