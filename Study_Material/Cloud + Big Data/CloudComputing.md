@@ -1,4 +1,4 @@
-# Cloud Computing Study Guide for Data Engineering
+# Cloud Computing Study Guide
 
 ## Table of Contents
 
