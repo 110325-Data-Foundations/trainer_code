@@ -1,12 +1,5 @@
-Below is your study guide in **Markdown (.md)** format.
-
----
 
 # Prompt Engineering Study Guide
-
-*For developers experienced with AI-assisted coding, seeking a practical, concise reference.*
-
----
 
 ## 1. Introduction to Prompt Engineering
 
@@ -93,7 +86,8 @@ Here is the code:
 
 ### Additional techniques
 
-- **Priming with expectations:** “Think step-by-step before writing the final answer.”  
+* **Priming with expectations:** “Think step-by-step before writing the final answer.”  
+
 * **Style anchors:** “Use concise, developer-friendly wording.”  
 * **Progressive prompting:** Ask the model to verify assumptions before producing final output.
 
@@ -105,13 +99,15 @@ LLMs in chat interfaces maintain *conversation state*, which influences future a
 
 ### Implications
 
-- Prior instructions persist unless overwritten  
+* Prior instructions persist unless overwritten  
+
 * Model may assume context from earlier messages  
 * Clarifying resets (e.g., “ignore previous instructions”) are useful
 
 ### Best Practices
 
-- If context becomes messy, start a new conversation  
+* If context becomes messy, start a new conversation  
+
 * Reiterate constraints when they matter: “As before, keep answers under 10 lines.”  
 * For IDE assistants, structure each ask as a self-contained request when possible
 
@@ -129,27 +125,30 @@ High-quality prompts often include:
 
 ### 1. **Clear Objective**
 
-- “Generate unit tests…”  
+* “Generate unit tests…”  
+
 * “Explain why this code may produce a race condition…”
 
 ### 2. **Context**
 
-- Language, framework, constraints, relevant files  
+* Language, framework, constraints, relevant files  
+
 * What the model should *not* assume
 
 ### 3. **User Intent**
 
-- “I am deciding between two implementations; focus on trade-offs.”
+* “I am deciding between two implementations; focus on trade-offs.”
 
 ### 4. **Format Rules**
 
-- Code blocks  
+* Code blocks  
+
 * JSON structures  
 * Numbered steps
 
 ### 5. **Success Criteria**
 
-- “This is successful if the resulting code compiles and follows the project’s style guide.”
+* “This is successful if the resulting code compiles and follows the project’s style guide.”
 
 ---
 
@@ -159,15 +158,17 @@ Hallucinations occur when the model invents facts, APIs, or behavior not grounde
 
 ### Common Causes for Developers
 
-- Vague problem descriptions  
+* Vague problem descriptions  
+
 * Asking about libraries or APIs not included in context  
 * Requesting nonexistent functions when similar ones exist  
 * Over-broad or under-specified instructions
 
 ### Mitigation Strategies
 
-- Anchor the model to known context:  
+* Anchor the model to known context:  
   “Use only built-in Python libraries.”  
+
 * Request verification:  
   “Double-check that the APIs you reference exist in Python 3.11.”  
 * Require citations or reasoning steps  
@@ -188,19 +189,22 @@ Use local or enterprise-secure tools when handling confidential data.
 ### 2. **Model Behavior Integrity**
 
 Include guardrails to avoid insecure output:
+
 * “Follow secure coding practices.”  
 * “Do not suggest deprecated or unsafe cryptographic algorithms.”  
 * “If an approach is risky, warn me explicitly.”
 
 ### 3. **Privacy & Compliance**
 
-- Follow organization policies (e.g., GDPR, SOC2)  
+* Follow organization policies (e.g., GDPR, SOC2)  
+
 * Store generated outputs securely  
 * Do not rely on LLM reasoning for legal/security decisions without human review
 
 ### 4. **Secure Coding Considerations**
 
 Ask the model to:
+
 * Validate input handling  
 * Identify injection risks  
 * Provide safer alternatives (e.g., parameterized queries)
